@@ -1,0 +1,34 @@
+group 'com.skcraft.cardinal'
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:18.0'
+    compile 'com.google.inject:guice:4.0'
+    compile 'com.google.code.findbugs:jsr305:3.0.0'
+    compile 'org.projectlombok:lombok:1.12.2'
+    compile 'net.sf.trove4j:trove4j:3.0.3'
+    compile 'com.zaxxer:HikariCP:2.4.0'
+    compile 'com.squareup.okhttp:okhttp:2.7.5'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.7.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.3'
+    compile 'redis.clients:jedis:2.8.1'
+    compile 'com.nurkiewicz.asyncretry:asyncretry:0.0.7'
+    runtime 'mysql:mysql-connector-java:5.1.36'
+
+    testCompile('junit:junit:4.12') {
+        exclude module: 'hamcrest'
+        exclude module: 'hamcrest-core'
+    }
+    testCompile 'org.hamcrest:hamcrest-all:1.3'
+    testCompile 'uk.co.modular-it:hamcrest-date:0.9.5'
+    testCompile 'org.dbunit:dbunit:2.5.1'
+}
